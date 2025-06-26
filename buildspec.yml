@@ -6,7 +6,7 @@ phases:
       - echo "🔐 Logging in to ECR (us-east-1)"
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 251943883984.dkr.ecr.us-east-1.amazonaws.com
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - REPO_URI=251943883984.dkr.ecr.us-east-1.amazonaws.com/node-ecs-app
+      - REPO_URI=251943883984.dkr.ecr.us-east-1.amazonaws.com/node-ecr-app
   build:
     commands:
       - echo "🐳 Building Docker image"
